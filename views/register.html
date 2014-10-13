@@ -1,0 +1,25 @@
+<div class="row row-fluid">
+    <div class="span4 offset4">
+        <form ng-submit="register()">
+            <fieldset>
+                <legend>Register</legend>
+
+                <label>First Name</label>
+                <input type="text" ng-model="first" placeholder="John" ng-required="true">
+
+                <label>Last Name</label>
+                <input type="text" ng-model="last" placeholder="Smith" ng-required="true">
+
+                <label>E-Mail Address</label>
+                <input type="text" ng-model="email" placeholder="test@villanova.edu" ng-required="true">
+
+                <label>Password</label>
+                <input type="password" ng-model="password" placeholder="******" ng-required="true">
+
+                <label>Confirm Password</label>
+                <input type="password" ng-model="cpassword" placeholder="******" ng-required="true">
+            </fieldset>
+            <button type="submit" class="btn btn-info pull-right">Register</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row row-fluid">
+  <div class="span6">
+    <h2>Recent Requests</h2>
+    <div ng-show="!requests">
+        Waiting for Requests...
+    </div>
+    <div ng-repeat="request in requests" class="well">
+      <div>
+        <div class="pull-left">
+          <strong>{{ request.class_name }}</strong>
+        </div>
+        <div class="pull-right">
+          <strong>First Requested</strong> on <strong>{{ request.date_submitted | date:"MM/dd/yyyy" }}</strong>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div style="padding: .5em;">
+        This class has been requested {{ request.times_requested }} times!<br />
+        It is taught by <strong>{{ request.instructor }}</strong>
+      </div>
+      <a href="#/reviews/post?id={{ request.instructor_id }}" class="btn btn-primary pull-right btn-mini" style="margin-left: .5em;"><i class="icon icon-comment"></i> Post Review</a>
+      <a href="#" class="btn btn-info pull-right btn-mini"><i class="icon icon-thumbs-up"></i> Request Review</a>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="span6">
+    <h2>Recent Reviews</h2>
+      <div ng-show="!reviews">
+          Waiting for Reviews...
+      </div>
+      <div ng-repeat="review in reviews" class="well">
+        <div>
+          <div class="pull-left">
+            <strong>{{ review.class_name }}</strong>
+          </div>
+          <div class="pull-right">
+            <strong>{{ review.display_name}}</strong> on <strong>{{ review.date_submitted | date:"MM/dd/yyyy" }}</strong>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div style="padding: .5em;">
+          {{ review.review | limitTo:150 }} ...
+        </div>
+        <a href="#/reviews/post?id={{ review.instructor_id }}" class="btn btn-primary pull-right btn-mini" style="margin-left: .5em;"><i class="icon icon-comment"></i> Post Review</a>
+        <a href="#/reviews?id={{ review.instructor_id }}" class="btn btn-info pull-right btn-mini"><i class="icon icon-book"></i> Read More</a>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

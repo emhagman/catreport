@@ -1,0 +1,50 @@
+<div class="row">
+  <h2 class="pull-left">{{ instructor.name }}</h2>
+  <h4 class="pull-right" style="margin-top: 1em;">Average Rating of <strong style='color: red;'>{{ instructor.overall }}/5.00</strong></h4>
+  <div class="clearfix"></div>
+</div>
+<div class="row">
+    <div class="span12">
+        <div class="form-horizontal">
+            <form ng-submit="postReview()">
+                <fieldset>
+                    <legend>Post A Review!</legend>
+
+                    <div class="row" style="margin-bottom: 1em;">
+                        <div class="span6">
+                            <label>Class Name</label>
+                            <input ng-model="class" type="text" placeholder="ACS 1001">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 1em;">
+                        <div class="span6">
+                            <label>Homework (1 = Fuck This, 5 = No Homework!)</label>
+                            <rating value="homework" max="5" on-leave="overStar = null"></rating>
+                        </div>
+                        <div class="span6">
+                            <label>Availability (1 = Where'd they go?, 5 = Holding My Hand Now)</label>
+                            <rating value="availability" max="5" on-leave="overStar = null"></rating>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 1em;">
+                        <div class="span6">
+                            <label>Helpfulness (1 = Good luck!, 5 = Does My Homework)</label>
+                            <rating value="helpfulness" max="5" on-leave="overStar = null"></rating>
+                        </div>
+                        <div class="span6">
+                            <label>Grading (1 = What's A Red Pen?, 5 = Cross Out All The Things!)</label>
+                            <rating value="grading" max="5" on-leave="overStar = null"></rating>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 1em;">
+                        <div class="span6">
+                            <label>Review</label>
+                            <textarea style="width: 30em; height: 10em;" ng-model="review"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-info pull-right">Post Review</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

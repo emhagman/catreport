@@ -1,0 +1,60 @@
+<div class="row" ng-hide="reviews">
+    <div class="span6 offset3">
+        <h2 class="text-center" style="margin-top: 1em;"><strong>No Reviews For This Teacher!</strong></h2>
+    </div>
+</div>
+<div ng-show="reviews" class="row">
+  <h2 class="pull-left">{{ instructor.name }}</h2>
+  <h4 class="pull-right" style="margin-top: 1em;">Average Rating of <strong style='color: red;'>{{ instructor.overall }}/5.00</strong></h4>
+  <div class="clearfix"></div>
+</div>
+<div class="row" ng-show="reviews" style="margin-bottom: 1em;">
+    <div class="span6">
+        <a href="#/reviews/post?id={{id}}" class="btn btn-info">Post Review</a>
+    </div>
+</div>
+<div ng-show="reviews" class="row">
+  <div class="well" ng-repeat="review in reviews">
+    <div class="pull-left">
+      <strong style="text-transform: capitalize;">{{ review.class_name }}</strong>
+    </div>
+    <div class="pull-right">
+      <strong>Posted by {{ review.display_name }}</strong> on <strong>{{ review.date_submitted | date: 'dd/MM/yyyy' }}</strong>
+    </div>
+    <div class="clearfix"></div>
+    <div style='margin-top: .5em; margin-bottom: .5em;'>
+      <div class='pull-left' style="width: 20em;">
+        <span class="label label-info">Homework</span>
+        <span ng-repeat="n in [] | range:review.homework">
+          <img ng-show='review.homework < 3' src='img/rpp.png' />
+          <img ng-show='review.homework >= 3' src='img/pp.png' />
+        </span>
+      </div>
+      <div class='pull-left' style="width: 20em;">
+        <span class="label label-info">Availability</span>
+        <span ng-repeat="n in [] | range:review.availability">
+          <img ng-show='review.availability < 3' src='img/rpp.png' />
+          <img ng-show='review.availability >= 3' src='img/pp.png' />
+        </span>
+      </div>
+      <div class='pull-left' style="width: 20em;">
+        <span class="label label-info">Helpfulness</span>
+        <span ng-repeat="n in [] | range:review.helpfulness">
+          <img ng-show='review.helpfulness < 3' src='img/rpp.png' />
+          <img ng-show='review.helpfulness >= 3' src='img/pp.png' />
+        </span>
+      </div>
+      <div class='pull-left' style="width: 20em;">
+        <span class='label label-info'>Grading</span>
+        <span ng-repeat="n in [] | range:review.grading">
+          <img ng-show='review.grading < 3' src='img/rpp.png' />
+          <img ng-show='review.grading >= 3' src='img/pp.png' />
+        </span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <p>
+      {{ review.review }}
+    </p>
+  </div>
+</div>
