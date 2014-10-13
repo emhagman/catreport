@@ -2,7 +2,7 @@
     'use strict';
 
     var app = angular.module('cat', [
-        'cat.filters', 'cat.services', 'cat.directives', 'cat.controllers',
+        'cat.filters', 'cat.services', 'cat.directives', 'cat.controllers', 'ngRoute',
         'ngCookies', 'angulartics', 'angulartics.google.analytics', 'ui.bootstrap'
     ]);
     
