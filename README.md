@@ -1,4 +1,5 @@
-catreport
-=========
+CAT Report
+==========
 
-Villanova teacher review website
+Villanova Teacher Review Website
+Written in AngularJS
