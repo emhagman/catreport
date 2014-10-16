@@ -41,20 +41,15 @@
             </div>
         </div>
         <!--/.nav-collapse -->
-        <form ng-show="!loggedIn" ng-submit="login()">
-            <div class="navbar-form pull-right" style="margin-left: 5px;">
-                <button type="submit" class="btn btn-info">Login</button>
-                <a href="#register" class="btn btn-inverse">Register</a>
-            </div>
-            <div class="navbar-search pull-right visible-desktop">
-                <div class="input-append">
-                    <input ng-model="username" class="input-small" placeholder="Username" type="text" autofocus=""
-                           autocomplete="off" auto-fillable-field/>
+        <form class="navbar-form navbar-right" role="login"  ng-show="!loggedIn" ng-submit="login()">
+            <div class="form-group">
+                <input ng-model="username" class="form-control" placeholder="Username" type="text" autofocus="" autocomplete="off" auto-fillable-field />
                     <span class="add-on">@villanova.edu</span>
                 </div>
-                <input ng-model="password" placeholder="Password" type="password" class="input-medium"
-                       autocomplete="off" auto-fillable-field/>
+                <input ng-model="password" placeholder="Password" type="password" class="form-control" autocomplete="off" auto-fillable-field />
             </div>
+            <button type="submit" class="btn btn-info">Login</button>
+            <a href="#register" class="btn btn-inverse">Register</a>
         </form>
     </div>
 </nav>
