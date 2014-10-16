@@ -13,7 +13,7 @@
 
     <!-- HTML5 Support for the Sucky Browser -->
     <!--[if lt IE 9]>
-    <script src="//cdn.jsdelivr.net/html5shiv/3.6.1/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <![endif]-->
 
 </head>
@@ -38,7 +38,7 @@
                     <li ng-show="false" ng-class="settings_active"><a href="#settings">Settings</a></li>
                 </ul>
                 <div ng-cloak style="color: white;" class="navbar-text pull-right">
-                    Students Registered: {{ stats.data.total || "???" }}
+                    Students Registered: {{ stats.total || "???" }}
                 </div>
             </div>
             <!--/.nav-collapse -->
