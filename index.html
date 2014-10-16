@@ -38,7 +38,7 @@
                     <li ng-show="false" ng-class="settings_active"><a href="#settings">Settings</a></li>
                 </ul>
                 <div ng-cloak style="color: white;" class="navbar-text pull-right">
-                    Students Registered: {{ stats.total || "???" }}
+                    Students Registered: {{ stats.data.total || "???" }} {{ stats }}
                 </div>
             </div>
             <!--/.nav-collapse -->
