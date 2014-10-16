@@ -17,29 +17,28 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav ng-controller="login" class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="#"><img src="img/cr_text.png" style="height: 0.8em;"/></a>
-
-        <div class="nav-collapse collapse">
-            <ul class="nav">
-                <li ng-show="loggedIn" ng-class="home_active"><a href="#home" ng-click="resetActive(); home_active = 'active';">Home</a></li>
-                <li ng-show="loggedIn" ng-class="reviews_active"><a href="#instructors" ng-click="resetActive(); reviews_active = 'active';">Reviews</a></li>
-                <li ng-show="false" ng-class="requests_active"><a href="#contact">Requests</a></li>
-                <li ng-show="false" ng-class="settings_active"><a href="#settings">Settings</a></li>
-            </ul>
-            <div ng-cloak style="color: white;" class="navbar-text pull-right">
-                Students Registered: {{ stats.data.total || "???" }} {{ stats }}
-            </div>
+          </button>
+          <a class="navbar-brand" href="#"><img src="img/cr_text.png" style="height: 0.8em;"/></a>
         </div>
-        <!--/.nav-collapse -->
-        <form class="navbar-form navbar-right" role="login"  ng-show="!loggedIn" ng-submit="login()">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li ng-show="loggedIn" ng-class="home_active"><a href="#home" ng-click="resetActive(); home_active = 'active';">Home</a></li>
+            <li ng-show="loggedIn" ng-class="reviews_active"><a href="#instructors" ng-click="resetActive(); reviews_active = 'active';">Reviews</a></li>
+            <li ng-show="false" ng-class="requests_active"><a href="#contact">Requests</a></li>
+            <li ng-show="false" ng-class="settings_active"><a href="#settings">Settings</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search" role="login"  ng-show="!loggedIn" ng-submit="login()">
             <div class="form-group">
                 <input ng-model="username" class="form-control" placeholder="Username" type="text" autofocus="" autocomplete="off" auto-fillable-field />
                     <span class="add-on">@villanova.edu</span>
@@ -47,11 +46,13 @@
                 <input ng-model="password" placeholder="Password" type="password" class="form-control" autocomplete="off" auto-fillable-field />
             </div>
             <button type="submit" class="btn btn-info">Login</button>
-            <a href="#register" class="btn btn-inverse">Register</a>
-        </form>
-    </div>
+            <a href="#register" class="btn btn-alert">Register</a>
+          </form>
+          
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>
-
+    
 <!-- View Container -->
 <div class="container" style="margin-top: 5em;" ng-view></div>
 
