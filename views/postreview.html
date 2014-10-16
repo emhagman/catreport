@@ -9,11 +9,10 @@
             <form ng-submit="postReview()">
                 <fieldset>
                     <legend>Post A Review!</legend>
-
                     <div class="row" style="margin-bottom: 1em;">
                         <div class="col-lg-6">
                             <label>Class Name</label>
-                            <input ng-model="class" type="text" placeholder="ACS 1001">
+                            <input class="form-control" ng-model="class" type="text" placeholder="ACS 1001">
                         </div>
                     </div>
                     <div class="row" style="margin-bottom: 1em;">
@@ -39,7 +38,7 @@
                     <div class="row" style="margin-bottom: 1em;">
                         <div class="col-lg-6">
                             <label>Review</label><br />
-                            <textarea style="width: 30em; height: 10em;" ng-model="review"></textarea>
+                            <textarea class="form-control" style="width: 30em; height: 10em;" ng-model="review"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-info pull-right">Post Review</button>
