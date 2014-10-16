@@ -40,10 +40,8 @@
           </ul>
           <form class="navbar-form navbar-right" role="search" role="login"  ng-show="!loggedIn" ng-submit="login()">
             <div class="form-group">
-                <input ng-model="username" class="form-control" placeholder="Username" type="text" autofocus="" autocomplete="off" auto-fillable-field />
-                    <span class="add-on">@villanova.edu</span>
-                </div>
-                <input ng-model="password" placeholder="Password" type="password" class="form-control" autocomplete="off" auto-fillable-field />
+                <input ng-model="username" class="form-control" placeholder="user@villanova.edu" type="text" autofocus="" autocomplete="off" auto-fillable-field />
+                <input ng-model="password" placeholder="somepassword" type="password" class="form-control" autocomplete="off" auto-fillable-field />
             </div>
             <button type="submit" class="btn btn-info">Login</button>
             <a href="#register" class="btn btn-alert">Register</a>
